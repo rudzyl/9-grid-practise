@@ -1,44 +1,41 @@
 body {
     text-align: center;
     display: grid;
-    grid-template-columns: 20px 550px 20px;
     grid-template-areas: 
     ". hederis ."
     ". herojus ."
     ". paslaugos ."
-    ". pirmiStulpeliai ."
     ". freelancas ."
     ". testimonis ."
-    ". antriStulpeliai ."
     ". footeris ."
     ". navigacija .";
+
 }
     header {
         grid-area: hederis;
         display: inline-block;
         width: 100%;
+        margin-bottom: 15px;
         line-height: 60px;
-        margin: 10px;
         outline-style: solid;
     }
     .pirmasis {
         grid-area: herojus;
         display: inline-block;
         width: 100%;
+        margin-bottom: 15px;
         line-height: 120px;
-        margin: 10px;
         outline-style: solid;
     }
     .antrasis {
         grid-area: paslaugos;
         display: inline-block;
         width: 100%;
+        margin-bottom: 15px;
         line-height: 130px;
-        margin: 10px;
         outline-style: solid;
     }
         .antrasis > h2 {
-            grid-area: pirmiStulpeliai;
             display: inline-block;
             height: 100px;
             width: 500px;
@@ -48,20 +45,19 @@ body {
         grid-area: freelancas;
         display: inline-block;
         width: 100%;
+        margin-bottom: 15px;
         line-height: 100px;
-        margin: 10px;
         outline-style: solid;
     }
     .ketvirtasis {
         grid-area: testimonis;
         display: inline-block;
         width: 100%;
+        margin-bottom: 15px;
         line-height: 140px;
-        margin: 10px;
         outline-style: solid;
     }
         .ketvirtasis > h2 {
-            grid-area: antriStulpeliai;
             display: inline-block;
             height: 100px;
             width: 500px;
@@ -72,8 +68,8 @@ body {
         grid-area: footeris;
         display: inline-block;
         width: 100%;
+        margin-bottom: 15px;
         line-height: 100px;
-        margin: 10px;
         outline-style: solid;
     }
     nav {
@@ -81,23 +77,87 @@ body {
         display: inline-block;
         width: 100%;
         line-height: 100px;
-        margin: 10px;
         outline-style: solid;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @media (max-width: 650px) {
-        body {
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: 20px 800px 20px;
+    }   
+        header::before {
+            content: '';
+            display: inline-block;
+            float: left;
+            outline-style: solid;
+            height: 30px;
+            width: 50px;
+            margin: 13px 5px;
         }
+        header::after {
+            content: '';
+            display: inline-block;
+            float: right;
+            outline-style: solid;
+            height: 30px;
+            width: 70px;
+            margin: 13px 5px;
+        }
+            .antrasis > h2 {
+                height: 200px;
+                width: 300px;
+                margin-right: 10px;
+            }
+            .antrasis > .nematomas {
+                display: none;
+            }
+        .ketvirtasis {
+            grid-area: freelancas;
+        }
+            .ketvirtasis > h2 {
+            height: 200px;
+            width: 300px;
+            margin-right: 10px;
+            }
+        .treciasis {
+            grid-area: testimonis;
+        }
+        nav {
+            display: none;
+        }
+        
+}
+@media (max-width: 650px) {
+    body {
+    grid-template-columns: 20px 550px 20px;
     }
+    header::before {
+        content: '';
+        display: none;
+    }
+    header::after {
+        content: '';
+        display: none;
+    }
+    nav {
+        display: inline-block;
+        width: 100%;
+        line-height: 100px;
+        outline-style: solid;
+    }
+    .antrasis > .nematomas {
+        display: inline-block;
+        height: 100px;
+        width: 500px;
+        outline-style: solid;
+    }
+    .antrasis > h2 {
+        display: inline-block;
+        height: 100px;
+        width: 500px;
+        outline-style: solid;
+    }
+    .ketvirtasis > h2 {
+        display: inline-block;
+        height: 100px;
+        width: 500px;
+    }
+}        
